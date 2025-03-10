@@ -6,10 +6,10 @@ def on_message(client, userdata, msg):
     # Decode the JSON payload from the message
     data = json.loads(msg.payload.decode())
     # Extract the base64 encoded payload
-    payload_base64 = data['uplink_message']['frm_payload']
+    payload_base64 = data["uplink_message"]["frm_payload"]
     
     # Decode the base64 payload to a UTF-8 string
-    payload = base64.b64decode(payload_base64).decode('utf-8')
+    payload = base64.b64decode(payload_base64).decode()
     
     # Print the received message
     print(f"Received message: {payload}")
@@ -23,7 +23,7 @@ client.on_message = on_message
 # MQTT broker username
 USERNAME = "testapp"
 # MQTT broker password
-PASSWORD = "NNSXS.2MU7ZTKELP3KSVXBWU7RRBFVRCF3H2KVCA7NIRQ.GMVDDDPDOXE4MDY5X5VED7IOIDGXKPKC5F63CQ"
+PASSWORD = "NNSXS.2MU7ZTKELP3KSVXBWU7RRBFVRCF3H2KVCA7NI"
 
 # Set the username and password for the MQTT client
 client.username_pw_set(USERNAME, PASSWORD)
